@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="upload-preview-container">
+    <center><h1>Inventory Upload Preview</h1></center>
+    <center><p class="scroll-to-bottom">
+        <a class="btn btn-secondar btn-sm" href="#scroll-anchor">Scroll to Bottom</a></center>
+    </p>
+
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        {% if inventory_items %}
+            <form method="post" action="{% url 'save_inventory' %}">
+                {% csrf_token %}
+                <center><table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Alcohol Type</th>
+                            <th>Brand</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in inventory_items %}
+                            <tr>
+                                <td>{{ item.alcohol_type }}</td>
+                                <td>{{ item.brand }}</td>
+                                <td>{{ item.price }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table></center>
+                <div class="button-wrapper">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+            <hr>
+            <center><p class="scroll-to-top">
+                <a class="btn btn-info btn-sm" href="#scroll-anchor" >Scroll to Top</a>
+            <a class="btn btn-secondar btn-sm" href="{% url 'home' %}" >Back to Chat</a></p></center>
+            <br>
+            
+        {% else %}
+            <p>No inventory data found.</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+<div id="scroll-anchor"></div>
+
+<script>
+    document.querySelector('.scroll-to-bottom a').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('#scroll-anchor').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.scroll-to-top a').addEventListener('click', function(event) {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+{% endblock %}
+

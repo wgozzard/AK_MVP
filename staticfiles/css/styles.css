@@ -1,0 +1,213 @@
+/* CSS animation for the loading spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styling for the loading spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  display: none;
+}
+
+body {
+    background-color: rgb(6, 41, 6);
+    color: white;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid white;
+    margin: 20px 0;
+    z-index: -1; /* Add this line to place the <hr> element behind other content */
+}
+
+.prompt-window hr {
+    display: none; /* Add this line to hide the <hr> element within the prompt window */
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+}
+
+h6 {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-size: 12px;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid white;
+    margin: 20px 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: darkgreen;
+    color: white;
+    padding: 2px;
+}
+
+footer span {
+    font-size: 10px;
+}
+.footer-left {
+    float: left;
+    margin-top: 10px;
+}
+.footer-right {
+    float: right;
+    margin-top: 10px;
+}
+.custom-btn {
+    background-color: red;
+    color: white;
+}
+
+.register-form {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.register-form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.register-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.register-form .form-text {
+    color: white;
+    margin-top: 5px;
+}
+.form-text-left {
+    text-align: left;
+    font-size: 12px;
+}
+
+.white-line {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(110, 109, 109);
+    margin-bottom: 10px;
+}
+.register-heading {
+    padding-bottom: 20px;
+}
+
+.prompt-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Set a width relative to the viewport width */
+    max-width: 500px; /* Set a maximum width for responsiveness */
+    max-height: 92vh; /* Limit the height to 90% of the viewport height */
+    overflow-y: auto; /* Add vertical scrolling if content exceeds the height */
+    background-color: #362417; /* Set the desired background color */
+    padding: 20px; /* Decrease the padding for mobile devices */
+    border: 2px solid gray; /* Add border properties */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prompt-window h3,
+.prompt-window p,
+.prompt-window ul {
+    margin-bottom: 10px; /* Decrease the margin for mobile devices */
+    font-size: 16px; /* Adjust the font size for mobile devices */
+}
+
+.prompt-window ul {
+    padding-left: 20px; /* Add left padding to the list items */
+}
+
+.button-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+}
+
+.button-wrapper button {
+    width: 150px; /* Adjust the width of the button for mobile devices */
+}
+
+/* Add a media query to further adjust the styles for smaller screens */
+@media (max-width: 480px) {
+    .prompt-window {
+        padding: 10px; /* Decrease the padding for smaller devices */
+    }
+
+    .prompt-window h3,
+    .prompt-window p,
+    .prompt-window ul {
+        font-size: 14px; /* Further adjust the font size for smaller devices */
+    }
+}
+
+.content-wrapper {
+    margin-bottom: 20px;
+}
+
+.button-wrapper {
+    margin-top: 20px;
+}
+
+.chat-response {
+    margin-bottom: 75px; /* Add margin-bottom for spacing between chat responses */
+}

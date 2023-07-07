@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1>AskKevn</h1></center>
+<div class="container">
+    <h3>I am a chatbot trained on your drink menu. Please see the example below in <span style="color: red">red</span> on how to interact with me, cheers! 🍹🍷🍺</h3>
+</div>
+<h6>Please reference these alcohol types in your prompt: <u>whiskey</u>, <u>bourbon</u>, <u>scotch</u>, <u>mezcal</u>, <u>tequila</u>, & <u>wine</u></h6>
+<h6 style="color: red">In your prompt, include one of the alcohol types:<i>(e.g., My guest is asking for a bourbon with an oak taste)</i></h6>
+<form method="post" id="chatbot-form">
+    {% csrf_token %}
+    <input type="text" class="form-control" name="user_input" value="{{ request.POST.user_input }}">
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    <button type="submit" class="btn btn-secondary mt-3" name="clear_button" value="clear">Clear</button>
+</form>
+
+<hr>
+
+<br>
+
+<div id="loading-spinner" class="spinner"></div>
+
+{% if response %}
+<div class="chat-response">
+    <p>{{ response|linebreaks }}</p>
+</div>
+{% endif %}
+
+<script>
+    // Function to show the loading spinner
+    function showLoadingSpinner() {
+        document.getElementById("loading-spinner").style.display = "block";
+    }
+
+    // Add event listener to the form submission
+    document.getElementById("chatbot-form").addEventListener("submit", function () {
+        showLoadingSpinner();
+    });
+
+    // Add event listener to the clear button
+    document.querySelector('button[name="clear_button"]').addEventListener("click", function () {
+        document.querySelector('input[name="user_input"]').value = "";
+    });
+</script>
+
+{% endblock content %}

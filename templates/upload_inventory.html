@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Upload Inventory</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_inventory_file" class="file-upload-label">Upload Your File:</label>
+        {{ form.inventory_file }}
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+    <br>
+    <div class="instructions">
+        <h2 class="text-center"><strong>PLEASE READ</strong></h2>
+        <h3 class="text-center"><strong>Instructions:</strong></h3>
+        <p class="text-center highlight">Your Excel file should contain 3 columns labeled:</p>
+        <h3 class="text-center">Alcohol Type, Brand, Price exactly</h3>
+        <br>
+        <p class="text-center">Please see the example of a correctly formatted file below:</p>
+        
+        <center>
+            <table style="border-collapse: collapse; width: 75%;">
+                <tr style="background-color: #4e4d4d;">
+                    <th style="border: 1px solid black; padding: 10px;">Alcohol Type</th>
+                    <th style="border: 1px solid black; padding: 10px;">Brand</th>
+                    <th style="border: 1px solid black; padding: 10px;">Price</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 10px;">Whiskey</td>
+                    <td style="border: 1px solid black; padding: 10px;">Four Roses Small Batch</td>
+                    <td style="border: 1px solid black; padding: 10px;">$12</td>
+                </tr>
+            </table>
+        </center>
+        
+    </div>
+    {% if file_id %}
+        <a href="{% url 'upload_preview' file_id=file_id %}">Preview Inventory</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
