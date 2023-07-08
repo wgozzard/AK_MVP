@@ -209,14 +209,9 @@ def save_inventory(request):
             )
             inventory_item.save()
 
-        # Update the cache with the newly saved inventory items
-        inventory_items = InventoryItem.objects.filter(owner=request.user)
-        cache.set('inventory_items', list(inventory_items))
-
         return redirect('home')  # Redirect to the desired page after saving the inventory
 
     return redirect('upload_preview')  # Redirect back to the upload preview page if the request method is not POST
-
 
 @login_required
 def upload_preview(request):
