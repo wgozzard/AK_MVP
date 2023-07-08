@@ -1,0 +1,616 @@
+#4 [stage-0  1/10] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1687824202@sha256:4a43db1819b09445d8bb92d6adbd28886e00e0dc80e4ad194d2e86a14621dfd5
+﻿#4 DONE 0.0s
+﻿ 
+﻿#5 [internal] load build context
+﻿#5 transferring context: 3.54MB 0.1s done
+﻿#5 DONE 0.1s
+﻿ 
+﻿ 
+﻿#6 [stage-0 3/8] COPY .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix
+﻿#6 CACHED
+﻿ 
+﻿#7 [stage-0  2/10] WORKDIR /app/
+﻿#7 CACHED
+﻿ 
+﻿#8 [stage-0 4/8] RUN nix-env -if .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix && nix-collect-garbage -d
+﻿#8 CACHED
+﻿ 
+﻿#9 [stage-0 5/8] COPY . /app/.
+﻿#9 DONE 0.1s
+﻿ 
+﻿ 
+﻿#10 [stage-0 6/8] RUN --mount=type=cache,id=s/2b47fb22-33c4-46b7-9320-f69c1ed92f58-/root/cache/pip,target=/root/.cache/pip python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt
+﻿ 
+﻿#10 6.762 Collecting aiohttp==3.8.4
+﻿#10 6.851   Downloading aiohttp-3.8.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
+﻿#10 6.907      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 19.1 MB/s eta 0:00:00
+﻿ 
+﻿#10 6.949 Collecting aiosignal==1.3.1
+﻿#10 6.961   Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+﻿#10 7.030 Collecting asgiref==3.4.1
+﻿ 
+﻿#10 7.044   Downloading asgiref-3.4.1-py3-none-any.whl (25 kB)
+﻿#10 7.087 Collecting async-timeout==4.0.2
+﻿#10 7.099   Downloading async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+﻿#10 7.155 Collecting attrs==23.1.0
+﻿ 
+﻿#10 7.167   Downloading attrs-23.1.0-py3-none-any.whl (61 kB)
+﻿#10 7.174      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 16.1 MB/s eta 0:00:00
+﻿#10 7.233 Collecting certifi==2023.5.7
+﻿#10 7.245   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)
+﻿#10 7.254      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 157.0/157.0 kB 35.0 MB/s eta 0:00:00
+﻿ 
+﻿#10 7.455 Collecting charset-normalizer==3.1.0
+﻿ 
+﻿#10 7.469   Downloading charset_normalizer-3.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)
+﻿#10 7.477      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.3/199.3 kB 40.9 MB/s eta 0:00:00
+﻿#10 7.561 Collecting dataclasses-json==0.5.7
+﻿ 
+﻿#10 7.574   Downloading dataclasses_json-0.5.7-py3-none-any.whl (25 kB)
+﻿ 
+﻿#10 7.797 Collecting Django==3.2.6
+﻿#10 7.813   Downloading Django-3.2.6-py3-none-any.whl (7.9 MB)
+﻿ 
+﻿#10 7.913      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.9/7.9 MB 82.0 MB/s eta 0:00:00
+﻿ 
+﻿ 
+﻿#10 8.156 Collecting frozenlist==1.3.3
+﻿#10 8.170   Downloading frozenlist-1.3.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (149 kB)
+﻿ 
+﻿#10 8.180      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.6/149.6 kB 29.3 MB/s eta 0:00:00
+﻿ 
+﻿#10 8.596 Collecting greenlet==2.0.2
+﻿ 
+﻿#10 8.609   Downloading greenlet-2.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (613 kB)
+﻿#10 8.633      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 613.7/613.7 kB 34.8 MB/s eta 0:00:00
+﻿#10 8.698 Collecting gunicorn==20.1.0
+﻿ 
+﻿#10 8.711   Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+﻿#10 8.718      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 kB 19.2 MB/s eta 0:00:00
+﻿#10 8.770 Collecting idna==3.4
+﻿#10 8.781   Downloading idna-3.4-py3-none-any.whl (61 kB)
+﻿#10 8.788      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 15.2 MB/s eta 0:00:00
+#10 9.011 Collecting langchain==0.0.190
+﻿#10 9.028   Downloading langchain-0.0.190-py3-none-any.whl (983 kB)
+﻿#10 9.045      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 983.2/983.2 kB 75.2 MB/s eta 0:00:00
+﻿ 
+﻿#10 9.195 Collecting marshmallow==3.19.0
+﻿#10 9.208   Downloading marshmallow-3.19.0-py3-none-any.whl (49 kB)
+﻿#10 9.215      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.1/49.1 kB 12.4 MB/s eta 0:00:00
+﻿#10 9.250 Collecting marshmallow-enum==1.5.1
+﻿ 
+﻿#10 9.262   Downloading marshmallow_enum-1.5.1-py2.py3-none-any.whl (4.2 kB)
+﻿ 
+﻿#10 10.05 Collecting multidict==6.0.4
+﻿#10 10.06   Downloading multidict-6.0.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (114 kB)
+﻿#10 10.07      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.5/114.5 kB 27.0 MB/s eta 0:00:00
+﻿#10 10.11 Collecting mypy-extensions==1.0.0
+﻿ 
+﻿#10 10.12   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+﻿ 
+﻿#10 10.30 Collecting numexpr==2.8.4
+﻿#10 10.31   Downloading numexpr-2.8.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (381 kB)
+﻿#10 10.33      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 381.4/381.4 kB 45.8 MB/s eta 0:00:00
+﻿ 
+﻿#10 11.06 Collecting numpy==1.24.3
+﻿#10 11.08   Downloading numpy-1.24.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+﻿ 
+﻿#10 11.32      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.3/17.3 MB 58.4 MB/s eta 0:00:00
+﻿#10 11.45 Collecting openai==0.27.7
+﻿ 
+﻿#10 11.47   Downloading openai-0.27.7-py3-none-any.whl (71 kB)
+﻿#10 11.47      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.0/72.0 kB 16.9 MB/s eta 0:00:00
+﻿#10 11.52 Collecting openapi-schema-pydantic==1.2.4
+﻿#10 11.53   Downloading openapi_schema_pydantic-1.2.4-py3-none-any.whl (90 kB)
+﻿#10 11.55      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.0/90.0 kB 10.8 MB/s eta 0:00:00
+﻿ 
+﻿#10 11.62 Collecting packaging==23.1
+﻿#10 11.63   Downloading packaging-23.1-py3-none-any.whl (48 kB)
+﻿#10 11.64      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.9/48.9 kB 11.1 MB/s eta 0:00:00
+﻿ 
+﻿#10 12.11 Collecting pandas==1.3.0
+﻿#10 12.13   Downloading pandas-1.3.0.tar.gz (4.7 MB)
+﻿#10 12.20      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 75.2 MB/s eta 0:00:00
+﻿ 
+﻿ #10 149.9   Installing build dependencies: finished with status 'error'
+﻿#10 13.20   Installing build dependencies: started
+#10 150.1             copying numpy/matrixlib/setup.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib
+﻿#10 150.1             copying numpy/matrixlib/defmatrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_numeric.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_interaction.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_defmatrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_masked_matrix.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_matrix_linalg.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             copying numpy/matrixlib/tests/test_multiarray.py -> build/lib.linux-x86_64-3.10/numpy/matrixlib/tests
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/laguerre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/polyutils.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/polynomial.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/__init__.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/setup.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/_polybase.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/hermite.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/chebyshev.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/hermite_e.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             copying numpy/polynomial/legendre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_hermite_e.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_legendre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_hermite.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_polyutils.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_chebyshev.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_printing.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_polynomial.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_classes.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             copying numpy/polynomial/tests/test_laguerre.py -> build/lib.linux-x86_64-3.10/numpy/polynomial/tests
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/random
+﻿#10 150.1             copying numpy/random/__init__.py -> build/lib.linux-x86_64-3.10/numpy/random
+﻿#10 150.1             copying numpy/random/setup.py -> build/lib.linux-x86_64-3.10/numpy/random
+﻿#10 150.1             copying numpy/random/_pickle.py -> build/lib.linux-x86_64-3.10/numpy/random
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_randomstate_regression.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_regression.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_extending.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_generator_mt19937.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_smoke.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_generator_mt19937_regressions.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_randomstate.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_random.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_direct.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             copying numpy/random/tests/test_seed_sequence.py -> build/lib.linux-x86_64-3.10/numpy/random/tests
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/testing
+﻿#10 150.1             copying numpy/testing/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing
+﻿#10 150.1             copying numpy/testing/setup.py -> build/lib.linux-x86_64-3.10/numpy/testing
+﻿#10 150.1             copying numpy/testing/utils.py -> build/lib.linux-x86_64-3.10/numpy/testing
+﻿#10 150.1             copying numpy/testing/print_coercion_tables.py -> build/lib.linux-x86_64-3.10/numpy/testing
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/utils.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/parameterized.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/noseclasses.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/nosetester.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             copying numpy/testing/_private/decorators.py -> build/lib.linux-x86_64-3.10/numpy/testing/_private
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/testing/tests
+﻿#10 150.1             copying numpy/testing/tests/test_decorators.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+﻿#10 150.1             copying numpy/testing/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+﻿#10 150.1             copying numpy/testing/tests/test_doctesting.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+﻿#10 150.1             copying numpy/testing/tests/test_utils.py -> build/lib.linux-x86_64-3.10/numpy/testing/tests
+﻿#10 150.1             creating build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_matlib.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/__init__.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_reloading.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_public_api.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_ctypeslib.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_numpy_version.py -> build/lib.linux-x86_64-3.10/numpy/tests
+#10 150.1             copying numpy/tests/test_warnings.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             copying numpy/tests/test_scripts.py -> build/lib.linux-x86_64-3.10/numpy/tests
+﻿#10 150.1             running build_clib
+﻿#10 150.1             customize UnixCCompiler
+﻿#10 150.1             customize UnixCCompiler using new_build_clib
+﻿#10 150.1             building 'npymath' library
+﻿#10 150.1             compiling C sources
+﻿#10 150.1             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC
+﻿#10 150.1
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core/src
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core/src/npymath
+#10 150.1             creating build/temp.linux-x86_64-3.10/build
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src
+﻿#10 150.1             creating build/temp.linu
+﻿x-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/npymath
+﻿#10 150.1             compile options: '-Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+﻿#10 150.1             extra options: '-std=c99'
+﻿#10 150.1             gcc: numpy/core/src/npymath/npy_math.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/ieee754.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_complex.cgcc: numpy/core/src/npymath/halffloat.c
+﻿#10 150.1
+﻿#10 150.1             ar: adding 4 object files to build/temp.linux-x86_64-3.10/libnpymath.a
+﻿#10 150.1             building 'npysort' library
+﻿#10 150.1             compiling C sources
+#10 150.1             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC
+﻿#10 150.1
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/npysort
+﻿#10 150.1             compile options: '-Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+﻿#10 150.1             extra options: '-std=c99'
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/quicksort.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/mergesort.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/timsort.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/heapsort.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/radixsort.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/selection.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npysort/binsearch.c
+﻿#10 150.1             ar: adding 7 object files to build/temp.linux-x86_64-3.10/libnpysort.a
+﻿#10 150.1             building 'npyrandom' library
+﻿#10 150.1             compiling C sources
+#10 150.1             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC
+﻿#10 150.1
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/random
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/random/src
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/random/src/distributions
+﻿#10 150.1             compile options: '-Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+﻿#10 150.1             extra options: '-std=c99'
+﻿#10 150.1             gcc: numpy/random/src/distributions/logfactorial.c
+﻿#10 150.1             gcc: numpy/random/src/distributions/distributions.c
+﻿#10 150.1             gcc: numpy/random/src/distributions/random_mvhg_count.cgcc: numpy/random/src/distributions/random_mvhg_marginals.c
+﻿#10 150.1             gcc: numpy/random/src/distributions/random_hypergeometric.c
+﻿#10 150.1
+﻿#10 150.1             ar: adding 5 object files to build/temp.linux-x86_64-3.10/libnpyrandom.a
+﻿#10 150.1             running build_ext
+﻿#10 150.1             customize UnixCCompiler
+﻿#10 150.1             customize UnixCCompiler using new_build_ext
+#10 150.1             building 'numpy.core._multiarray_tests' extension
+﻿#10 150.1             compiling C sources
+﻿#10 150.1             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC
+﻿#10 150.1
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core/src/common
+﻿#10 150.1             compile options: '-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+﻿#10 150.1             extra options: '-std=c99'
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/_multiarray_tests.cgcc: numpy/core/src/common/mem_overlap.c
+﻿#10 150.1
+﻿#10 150.1             gcc -shared -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-zlib-1.2.13/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-bzip2-1.0.8/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-expat-2.5.0/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-xz-5.2.9/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-libffi-3.4.4/lib -L/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gdbm-1.23/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-sqlite-3.40.0/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-readline-8.1p2/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-ncurses-6.3-p20220507/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-openssl-3.0.7/lib -L/nix/store/11mrj0y0k09j7pzcr78iy5fxgcmzjxq6-tzdata-2022g/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-zlib-1.2.13/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-bzip2-1.0.8/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-expat-2.5.0/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-xz-5.2.9/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-libffi-3.4.4/lib -L/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gdbm-1.23/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-sqlite-3.40.0/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-readline-8.1p2/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-ncurses-6.3-p20220507/lib -L/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-openssl-3.0.7/lib -L/nix/store/11mrj0y0k09j7pzcr78iy5fxgcmzjxq6-tzdata-2022g/lib build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/_multiarray_tests.o build/temp.linux-x86_64-3.10/numpy/core/src/common/mem_overlap.o -L/nix/store/al6g1zbk8li6p8mcyp0h60d08jaahf8c-python3-3.10.9/lib -Lbuild/temp.linux-x86_64-3.10 -lnpymath -o build/lib.linux-x86_64-3.10/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+﻿#10 150.1             building 'numpy.core._multiarray_umath' extension
+﻿#10 150.1             compiling C sources
+﻿#10 150.1             C compiler: gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC
+﻿#10 150.1
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core/src/multiarray
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/numpy/core/src/umath
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/umath
+﻿#10 150.1             creating build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/common
+﻿#10 150.1             compile options: '-DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/umath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c'
+﻿#10 150.1             extra options: '-std=c99'
+﻿#10 150.1             gcc: numpy/core/src/multiarray/alloc.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/array_assign_scalar.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/buffer.c
+#10 150.1             gcc: numpy/core/src/multiarray/common.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/conversion_utils.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/descriptor.cgcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/einsum.c
+﻿#10 150.1
+﻿#10 150.1             gcc: numpy/core/src/multiarray/datetime_strings.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/arrayobject.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/array_assign_array.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/ctors.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/convert.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/arrayfunction_override.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/datetime_busday.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/calculation.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/hashdescr.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/convert_datatype.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/item_selection.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/datetime_busdaycal.c
+#10 150.1             gcc: numpy/core/src/multiarray/compiled_base.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/dragon4.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/arraytypes.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/lowlevel_strided_loops.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/multiarraymodule.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/datetime.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/dtype_transfer.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/nditer_constr.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/iterators.c
+﻿#10 150.1             In function ‘npyiter_replace_axisdata’,
+﻿#10 150.1                 inlined from ‘npyiter_allocate_arrays’ at numpy/core/src/multiarray/nditer_constr.c:2873:13,
+﻿#10 150.1                 inlined from ‘NpyIter_AdvancedNew’ at numpy/core/src/multiarray/nditer_constr.c:403:10:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_constr.c:1993:32: warning: writing 8 bytes into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1993 |     NIT_BASEOFFSETS(iter)[iop] = baseoffset;
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_constr.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_constr.c: In function ‘NpyIter_AdvancedNew’:
+#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [40, 6152] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             gcc: numpy/core/src/multiarray/refcount.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/scalarapi.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/nditer_pywrap.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/sequence.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/temp_elide.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/shape.c
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘float_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2967:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2967:12: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+﻿#10 150.1                   |            ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘cfloat_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2975:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2975 |     hashreal = _Py_HashDouble((double)
+﻿#10 150.1                   |                               ^~~~~~~~
+﻿#10 150.1                   |                               |
+﻿#10 150.1                   |                               double
+﻿#10 150.1              2976 |             PyArrayScalar_VAL(obj, C@name@).real);
+#10 150.1                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2975:16: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2975 |     hashreal = _Py_HashDouble((double)
+﻿#10 150.1                   |                ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2981:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2981 |     hashimag = _Py_HashDouble((double)
+#10 150.1                   |                               ^~~~~~~~
+﻿#10 150.1                   |                               |
+﻿#10 150.1                   |                               double
+﻿#10 150.1              2982 |             PyArrayScalar_VAL(obj, C@name@).imag);
+﻿#10 150.1                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2981:16: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2981 |     hashimag = _Py_HashDouble((double)
+﻿#10 150.1                   |                ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘longdouble_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2967:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2967:12: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2967 |     return _Py_HashDouble((double) PyArrayScalar_VAL(obj, @name@));
+﻿#10 150.1                   |            ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘clongdouble_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2975:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2975 |     hashreal = _Py_HashDouble((double)
+﻿#10 150.1                   |                               ^~~~~~~~
+﻿#10 150.1                   |                               |
+﻿#10 150.1                   |                               double
+﻿#10 150.1              2976 |             PyArrayScalar_VAL(obj, C@name@).real);
+﻿#10 150.1                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2975:16: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2975 |     hashreal = _Py_HashDouble((double)
+﻿#10 150.1                   |                ^~~~~~~~~~~~~~
+#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2981:31: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2981 |     hashimag = _Py_HashDouble((double)
+﻿#10 150.1                   |                               ^~~~~~~~
+﻿#10 150.1                   |                               |
+﻿#10 150.1                   |                               double
+﻿#10 150.1              2982 |             PyArrayScalar_VAL(obj, C@name@).imag);
+﻿#10 150.1                   |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2981:16: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2981 |     hashimag = _Py_HashDouble((double)
+﻿#10 150.1                   |                ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘half_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2997:27: error: incompatible type for argument 1 of ‘_Py_HashDouble’
+﻿#10 150.1              2997 |     return _Py_HashDouble(npy_half_to_double(PyArrayScalar_VAL(obj, Half)));
+﻿#10 150.1                   |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+﻿#10 150.1                   |                           |
+#10 150.1                   |                           double
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:38: note: expected ‘PyObject *’ {aka ‘struct _object *’} but argument is of type ‘double’
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                                      ^~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2997:12: error: too few arguments to function ‘_Py_HashDouble’
+﻿#10 150.1              2997 |     return _Py_HashDouble(npy_half_to_double(PyArrayScalar_VAL(obj, Half)));
+﻿#10 150.1                   |            ^~~~~~~~~~~~~~
+﻿#10 150.1             In file included from /root/.nix-profile/include/python3.10/Python.h:77,
+﻿#10 150.1                              from numpy/core/src/multiarray/scalartypes.c.src:3:
+﻿#10 150.1             /root/.nix-profile/include/python3.10/pyhash.h:10:23: note: declared here
+﻿#10 150.1                10 | PyAPI_FUNC(Py_hash_t) _Py_HashDouble(PyObject *, double);
+﻿#10 150.1                   |                       ^~~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘longdouble_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2968:1: warning: control reaches end of non-void function [-Wreturn-type]
+﻿#10 150.1              2968 | }
+#10 150.1                   | ^
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘float_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2968:1: warning: control reaches end of non-void function [-Wreturn-type]
+﻿#10 150.1              2968 | }
+﻿#10 150.1                   | ^
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src: In function ‘half_arrtype_hash’:
+﻿#10 150.1             numpy/core/src/multiarray/scalartypes.c.src:2998:1: warning: control reaches end of non-void function [-Wreturn-type]
+﻿#10 150.1              2998 | }
+﻿#10 150.1                   | ^
+﻿#10 150.1             gcc: numpy/core/src/multiarray/vdot.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/typeinfo.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/usertypes.c
+﻿#10 150.1             gcc: numpy/core/src/umath/umathmodule.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/loops.c
+﻿#10 150.1             gcc: numpy/core/src/umath/ufunc_object.c
+﻿#10 150.1             gcc: numpy/core/src/umath/reduction.c
+#10 150.1             gcc: numpy/core/src/multiarray/number.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/multiarray/nditer_templ.c
+﻿#10 150.1             gcc: numpy/core/src/umath/ufunc_type_resolution.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/ieee754.c
+﻿#10 150.1             gcc: numpy/core/src/umath/override.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/npymath/npy_math_complex.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/nditer_api.c
+﻿#10 150.1             gcc: numpy/core/src/npymath/npy_math.c
+﻿#10 150.1             gcc: numpy/core/src/npymath/halffloat.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/flagsobject.c
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c: In function ‘npyiter_coalesce_axes’:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [16, 240] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [17, 241] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [18, 242] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [19, 243] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [20, 244] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [21, 245] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [22, 246] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [23, 247] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [24, 248] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a
+﻿region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [25, 249] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [26, 250] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [27, 251] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [28, 252] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [29, 253] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+#10 150.1             numpy/core/src/multiarray/nditer_api.c:1684:24: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+﻿#10 150.1              1684 |             perm[idim] = (npy_int8)idim;
+﻿#10 150.1                   |             ~~~~~~~~~~~^~~~~~~~~~~~~~~~
+﻿#10 150.1             In file included from numpy/core/src/multiarray/nditer_api.c:16:
+﻿#10 150.1             numpy/core/src/multiarray/nditer_impl.h:148:10: note: at offset [30, 254] into destination object ‘iter_flexdata’ of size 1
+﻿#10 150.1               148 |     char iter_flexdata;
+﻿#10 150.1                   |          ^~~~~~~~~~~~~
+﻿#10 150.1             gcc: numpy/core/src/common/array_assign.c
+﻿#10 150.1             gcc: numpy/core/src/common/ucsnarrow.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/getset.c
+﻿#10 150.1             gcc: numpy/core/src/common/ufunc_override.c
+﻿#10 150.1             gcc: numpy/core/src/common/mem_overlap.c
+﻿#10 150.1             gcc: numpy/core/src/common/numpyos.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/common/npy_cpu_features.c
+﻿#10 150.1             gcc: numpy/core/src/umath/extobj.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/scalarmath.c
+#10 150.1             gcc: numpy/core/src/common/npy_longdouble.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/mapping.c
+﻿#10 150.1             gcc: numpy/core/src/multiarray/methods.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/matmul.c
+﻿#10 150.1             gcc: build/src.linux-x86_64-3.10/numpy/core/src/umath/clip.c
+﻿#10 150.1             error: Command "gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/nix/store/vamwsqfpvgfwnc7ksa8k4aa52my5r1bq-libxcrypt-4.4.33/include -fPIC -DNPY_INTERNAL_BUILD=1 -DHAVE_NPY_CONFIG_H=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/umath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Inumpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/core/include/numpy -Inumpy/core/src/common -Inumpy/core/src -Inumpy/core -Inumpy/core/src/npymath -Inumpy/core/src/multiarray -Inumpy/core/src/umath -Inumpy/core/src/npysort -I/opt/venv/include -I/root/.nix-profile/include/python3.10 -Ibuild/src.linux-x86_64-3.10/numpy/core/src/common -Ibuild/src.linux-x86_64-3.10/numpy/core/src/npymath -c build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.c -o build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o -MMD -MF build/temp.linux-x86_64-3.10/build/src.linux-x86_64-3.10/numpy/core/src/multiarray/scalartypes.o.d -std=c99" failed with exit status 1
+﻿#10 150.1             [end of output]
+﻿#10 150.1
+﻿#10 150.1         note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 150.1         ERROR: Failed building wheel for numpy
+﻿#10 150.1       Failed to build numpy
+﻿#10 150.1       ERROR: Could not build wheels for numpy, which is required to install pyproject.toml-based projects
+﻿#10 150.1
+﻿#10 150.1       [notice] A new release of pip available: 22.3.1 -> 23.1.2
+﻿#10 150.1       [notice] To update, run: pip install --upgrade pip
+﻿#10 150.1       [end of output]
+﻿#10 150.1
+﻿#10 150.1   note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 150.1 error: subprocess-exited-with-error
+﻿#10 150.1
+﻿#10 150.1 × pip subprocess to install build dependencies did not run successfully.
+﻿#10 150.1 │ exit code: 1

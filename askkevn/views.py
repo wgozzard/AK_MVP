@@ -213,7 +213,6 @@ def save_inventory(request):
 
     return redirect('upload_preview')  # Redirect back to the upload preview page if the request method is not POST
 
-
 @login_required
 def upload_preview(request):
 

@@ -31,6 +31,7 @@ from django.contrib.auth.decorators import permission_required
 from django.template.response import TemplateResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from django.core.cache import cache
 
 BASE_DIR = settings.BASE_DIR
 
