@@ -264,3 +264,21 @@ footer span {
     background-color: yellow;
     /* Add any other desired styles for the highlighting */
 }
+.navbar {
+    background-color: rgb(23, 117, 23) !important;
+}
+
+.content-container {
+    margin: 20px; /* Adjust the margin as needed */
+}
+.brand-padding {
+    margin-left: 10px; /* Adjust the value as per your preference */
+}
+
+.menu-padding {
+    margin-right: 10px; /* Adjust the value as per your preference */
+}
+.nav-padding {
+    padding-left: 10px; /* Adjust the value as per your preference */
+    /* padding-right: 10px; Adjust the value as per your preference */
+}
