@@ -20,6 +20,7 @@ numexpr==2.8.4
 numpy==1.24
 openai==0.27.7
 openapi-schema-pydantic==1.2.4
+openpyxl==3.0.9
 packaging==23.1
 pandas==1.2.5
 pydantic==1.10.8
