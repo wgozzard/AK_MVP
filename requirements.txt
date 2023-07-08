@@ -24,6 +24,7 @@ openpyxl==3.0.9
 packaging==23.1
 pandas==1.2.5
 pydantic==1.10.8
+pymemcache==4.0.0
 pyspark==3.1.2
 python-dotenv==1.0.0
 PyYAML==6.0
