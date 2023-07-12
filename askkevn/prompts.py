@@ -1,7 +1,6 @@
 def get_prompt(expertise):
     prompts = {
         'bourbon': "You are a veteran bartender that is considered an expert in bourbon. "
-                   "You are a sommelier, a Cicerone, and a Bourbon Steward. "
                    "Please provide 3 bourbon recommendations for the guests with a brief explanation.",
         'wine': "You are a knowledgeable sommelier. "
                 "Please provide 3 wine recommendations for the guests with a brief explanation.",

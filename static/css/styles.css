@@ -21,6 +21,17 @@ body {
     color: white;
 }
 
+hr {
+    border: none;
+    border-top: 3px solid white;
+    margin: 20px 0;
+    z-index: -1; /* Add this line to place the <hr> element behind other content */
+}
+
+.prompt-window hr {
+    display: none; /* Add this line to hide the <hr> element within the prompt window */
+}
+
 .container {
     margin-bottom: 20px;
 }
@@ -66,9 +77,9 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: darkgreen;
+    background-color: rgb(44, 146, 44);
     color: white;
-    padding: 2px;
+    padding: 4px;
 }
 
 footer span {
@@ -258,11 +269,6 @@ footer span {
 .upload-preview-container .btn-primary:hover,
 .upload-preview-container .btn-danger:hover {
     background-color: #0056b3;
-}
-
-.myinventory {
-    background-color: yellow;
-    /* Add any other desired styles for the highlighting */
 }
 .navbar {
     background-color: rgb(23, 117, 23) !important;

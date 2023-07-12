@@ -110,10 +110,9 @@ def upload_preview(request):
 def chatbot(request):
     chatbot_response = None
     user_input = request.POST.get('user_input', '')
-
     api_key = os.environ.get("OPENAI_KEY")  # Retrieve the API key from environment variable
 
-    if user_input and api_key:
+    if user_input:
         expertise = determine_expertise(user_input)
         prompt = get_prompt(expertise)
 
@@ -124,13 +123,16 @@ def chatbot(request):
                 inventory_items = get_inventory_items()
                 cache.set('inventory_items', inventory_items)
 
-            inventory_prompt = generate_inventory_prompt(inventory_items)
+            filtered_items = filter_inventory_items(inventory_items, expertise)
+            inventory_prompt = generate_inventory_prompt(filtered_items, expertise)
             prompt += '\n\n' + inventory_prompt
 
         if 'clear_button' in request.POST:
             user_input = ''
         else:
             prompt += "\n\n" + user_input
+
+        # print("Prompt:", prompt)  # Print the prompt for debugging purposes
 
         try:
             response = openai.Completion.create(
@@ -157,6 +159,8 @@ def chatbot(request):
 
     return render(request, 'main.html', {'response': chatbot_response, 'user_input': user_input})
 
+        
+
 def get_inventory_items():
     try:
         inventory_items = cache.get('inventory_items')
@@ -182,11 +186,19 @@ def get_inventory_items():
         return []
 
 
-def generate_inventory_prompt(inventory_items):
+def generate_inventory_prompt(inventory_items, alcohol_type):
     inventory_prompt = ""
     for item in inventory_items:
-        inventory_prompt += f"{item['alcohol_type']} - {item['brand']}\n"
+        if item['alcohol_type'].lower() == alcohol_type.lower():
+            inventory_prompt += f"{item['brand']} - {item['price']}\n"
     return inventory_prompt
+
+def filter_inventory_items(inventory_items, alcohol_type):
+    filtered_items = []
+    for item in inventory_items:
+        if item['alcohol_type'].lower() == alcohol_type.lower():
+            filtered_items.append(item)
+    return filtered_items
 
 @login_required
 def delete_file(request):
