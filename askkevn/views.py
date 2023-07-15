@@ -106,6 +106,59 @@ def upload_preview(request):
     return render(request, 'upload_preview.html', {'inventory_items': inventory_items})
 
 
+# @login_required
+# def chatbot(request):
+#     chatbot_response = None
+#     user_input = request.POST.get('user_input', '')
+#     api_key = os.environ.get("OPENAI_KEY")  # Retrieve the API key from environment variable
+
+#     if user_input:
+#         expertise = determine_expertise(user_input)
+#         prompt = get_prompt(expertise)
+
+#         if expertise in ['bourbon', 'whiskey', 'wine', 'beer', 'mezcal', 'tequila', 'rye', 'scotch']:
+#             inventory_items = cache.get('inventory_items')
+
+#             if inventory_items is None:
+#                 inventory_items = get_inventory_items()
+#                 cache.set('inventory_items', inventory_items)
+
+#             filtered_items = filter_inventory_items(inventory_items, expertise)
+#             inventory_prompt = generate_inventory_prompt(filtered_items, expertise)
+#             prompt += '\n\n' + inventory_prompt
+
+#         if 'clear_button' in request.POST:
+#             user_input = ''
+#         else:
+#             prompt += "\n\n" + user_input
+
+#         # print("Prompt:", prompt)  # Print the prompt for debugging purposes
+
+#         try:
+#             response = openai.Completion.create(
+#                 engine='text-davinci-003',
+#                 prompt=prompt,
+#                 max_tokens=175,
+#                 temperature=0.2,
+#                 api_key=api_key  # Pass the API key to authenticate the request
+#             )
+
+#             if response and response["choices"]:
+#                 chatbot_response = response["choices"][0]['text']
+#                 chatbot_response = chatbot_response.lstrip(string.punctuation).strip()
+
+#                 if expertise == 'general' and 'alcohol' not in chatbot_response:
+#                     chatbot_response += "\n\nPlease remember that I'm here to assist you with drink-related questions."
+
+#                 if "*Inventory Match:" not in chatbot_response:
+#                     cache.delete('inventory_items')
+
+#         except Exception as e:
+#             # Handle the exception appropriately
+#             pass
+
+#     return render(request, 'main.html', {'response': chatbot_response, 'user_input': user_input})
+
 @login_required
 def chatbot(request):
     chatbot_response = None
@@ -115,6 +168,10 @@ def chatbot(request):
     if user_input:
         expertise = determine_expertise(user_input)
         prompt = get_prompt(expertise)
+
+        if expertise == 'price':
+            alcohol = extract_alcohol_from_input(user_input)  # Implement a function to extract the alcohol name from the user input
+            prompt = get_prompt(expertise, alcohol)
 
         if expertise in ['bourbon', 'whiskey', 'wine', 'beer', 'mezcal', 'tequila', 'rye', 'scotch']:
             inventory_items = cache.get('inventory_items')
@@ -158,9 +215,18 @@ def chatbot(request):
             pass
 
     return render(request, 'main.html', {'response': chatbot_response, 'user_input': user_input})
+   
+def extract_alcohol_from_input(user_input):
+    # Regular expression pattern to extract alcohol name between quotes or after "price of"
+    pattern = r'"([^"]+)"|price of\s+(\w+)'
 
-        
+    match = re.search(pattern, user_input, re.IGNORECASE)
+    if match:
+        alcohol_name = match.group(1) or match.group(2)
+        return alcohol_name.strip()
 
+    return None
+    
 def get_inventory_items():
     try:
         inventory_items = cache.get('inventory_items')

@@ -32,6 +32,7 @@ from django.template.response import TemplateResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from django.core.cache import cache
+import re
 
 BASE_DIR = settings.BASE_DIR
 
