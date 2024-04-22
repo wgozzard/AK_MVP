@@ -190,10 +190,10 @@ def chatbot(request):
             prompt += "\n\n" + user_input
 
         # print("Prompt:", prompt)  # Print the prompt for debugging purposes
-
+   
         try:
             response = openai.Completion.create(
-                engine='text-davinci-003',
+                engine='gpt-4',
                 prompt=prompt,
                 max_tokens=175,
                 temperature=0.2,
