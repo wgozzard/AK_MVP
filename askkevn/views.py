@@ -192,12 +192,15 @@ def chatbot(request):
         # print("Prompt:", prompt)  # Print the prompt for debugging purposes
    
         try:
-            response = openai.Completion.create(
-                engine='gpt-4',
-                prompt=prompt,
-                max_tokens=175,
-                temperature=0.2,
-                api_key=api_key  # Pass the API key to authenticate the request
+            response = openai.ChatCompletion.create(
+            model='gpt-4',
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+                ],
+            max_tokens=175,
+            temperature=0.2,
+            api_key=api_key  # Pass the API key to authenticate the request
             )
 
             if response and response["choices"]:
