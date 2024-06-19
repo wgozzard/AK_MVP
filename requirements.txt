@@ -22,7 +22,7 @@ openai==0.27.7
 openapi-schema-pydantic==1.2.4
 openpyxl==3.0.9
 packaging==23.1
-pandas==1.2.5
+pandas>=1.4.0
 pydantic==1.10.8
 pymemcache==4.0.0
 pyspark==3.1.2
